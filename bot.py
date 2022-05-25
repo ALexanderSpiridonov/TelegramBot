@@ -11,11 +11,11 @@ def send_welcome(message):
 def echo_all(message):
     text = message.text + " "
     text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
-    if "триста" in text.lower().split():
+    if "триста" in text_clean.lower().split():
         bot.reply_to(message, "отсоси у тракториса")
-    elif text.lower().split()[-1] in ["да", "дa"]:
+    elif text_clean.lower().split()[-1] in ["да", "дa"]:
         bot.reply_to(message, "пизда")
-    elif text.lower().split()[-1] in ["нет", "нeт", "net"]:
+    elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
         bot.reply_to(message, "пидора ответ")
         
 bot.polling()
