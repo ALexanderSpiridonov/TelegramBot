@@ -1,3 +1,4 @@
+import re
 import telebot
 from config import BOT_TOKEN
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -9,11 +10,12 @@ def send_welcome(message):
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
     text = message.text + " "
+    text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
     if "триста" in text.lower().split():
         bot.reply_to(message, "отсоси у тракториса")
-    elif "да" == text.lower().split()[-1]:
+    elif text.lower().split()[-1] in ["да", "дa"]:
         bot.reply_to(message, "пизда")
-    elif "нет" == text.lower().split()[-1]:
+    elif text.lower().split()[-1] in ["нет", "нeт", "net"]:
         bot.reply_to(message, "пидора ответ")
         
 bot.polling()
