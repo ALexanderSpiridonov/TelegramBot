@@ -11,9 +11,9 @@ def echo_all(message):
     text = message.text + " "
     if "триста" in text.lower().split():
         bot.reply_to(message, "отсоси у тракториса")
-    elif "да" in  text.lower().split():
+    elif "да" == text.lower().split()[-1]:
         bot.reply_to(message, "пизда")
-    elif "нет" in text.lower().split():
+    elif "нет" == text.lower().split()[-1]:
         bot.reply_to(message, "пидора ответ")
         
 bot.polling()
