@@ -15,7 +15,7 @@ def send_welcome(message):
     bot.reply_to(message, "Скажи триста")
 
 # one word check
-@bot.message_handler(func=lambda m: True, regexp="[^А-Яа-яa0-9]+")
+@bot.message_handler(func=lambda m: m.split() > 0, regexp="[^А-Яа-яa0-9]+")
 def echo_all(message):
     text_clean = message.text + " "
     # text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
@@ -40,11 +40,11 @@ def echo_all(message):
         elif "получается" in text_clean.lower().split()[-1]:
             bot.reply_to(message, "... и хуй стоит, и голова качается!")
 
-    if len(text_clean.split()) > 1:
-        if "дай мне" in ' '.join(text_clean.lower().split[-2:]):
-            bot.reply_to(message, "... у тебя рука в говне")
+    # if len(text_clean.split()) > 1:
+    #     if "дай мне" in ' '.join(text_clean.lower().split[-2:]):
+    #         bot.reply_to(message, "... у тебя рука в говне")
         
-        elif "будь другом" in ' '.join(text_clean.lower().split[-2:]):
-            bot.reply_to(message, "насри кругом!")
+    #     elif "будь другом" in ' '.join(text_clean.lower().split[-2:]):
+    #         bot.reply_to(message, "насри кругом!")
         
 bot.polling()
