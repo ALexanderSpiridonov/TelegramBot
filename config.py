@@ -1,5 +1,0 @@
-BOT_TOKEN = "1831603740:AAFJ82Aww13DQkju8V7xTg1gk30YgGGaD5U"
-BOT_OWNER = ""
-CHANEL_ID = ""
-
-URL = "https://api.telegram.org/bot1831603740:AAFJ82Aww13DQkju8V7xTg1gk30YgGGaD5U/getUpdates"
