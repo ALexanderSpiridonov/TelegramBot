@@ -19,7 +19,7 @@ def echo_all(message):
     text = message.text + " "
     text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
     if len(text_clean.split()) > 0:
-        if "триста" in text_clean.lower().split():
+        if any(val in text_clean.lower().split() for val in ["триста", "300"]):
             bot.reply_to(message, "отсоси у тракториса")
         elif text_clean.lower().split()[-1] in ["да", "дa"]:
             bot.reply_to(message, "пизда")
