@@ -17,7 +17,7 @@ def send_welcome(message):
 # one word check
 @bot.message_handler(func=lambda m: len(m.text.split()) > 0) #, regexp="[^А-Яа-яa0-9]+")
 def reply_one_word(message):
-    text = message.text # + " "
+    text = message.text + " "
     text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
     
     # bot replies
@@ -42,13 +42,13 @@ def reply_one_word(message):
 # more than two words messages
 @bot.message_handler(func=lambda m: len(m.text.split()) > 1)
 def reply_two_words(message):
-    text = message.text # + " "
+    text = message.text + " "
     text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
 
-    if "дай мне" in ' '.join(text_clean.lower().split[-2:]):
+    if "дай мне" in ' '.join(text_clean.lower().split()[-2:]):
         bot.reply_to(message, "... у тебя рука в говне")
     
-    elif "будь другом" in ' '.join(text_clean.lower().split[-2:]):
+    elif "будь другом" in ' '.join(text_clean.lower().split()[-2:]):
         bot.reply_to(message, "насри кругом!")
     
 bot.polling()
