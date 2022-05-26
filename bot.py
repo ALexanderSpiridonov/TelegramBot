@@ -18,13 +18,14 @@ def send_welcome(message):
 def echo_all(message):
     text = message.text + " "
     text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
-    if "триста" in text_clean.lower().split():
-        bot.reply_to(message, "отсоси у тракториса")
-    elif text_clean.lower().split()[-1] in ["да", "дa"]:
-        bot.reply_to(message, "пизда")
-    elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
-        bot.reply_to(message, "пидора ответ")
-    elif "наверно" in text_clean.lower().split() :
-        bot.send_sticker(chat_id, file_id)
+    if len(text_clean) > 0:
+        if "триста" in text_clean.lower().split():
+            bot.reply_to(message, "отсоси у тракториса")
+        elif text_clean.lower().split()[-1] in ["да", "дa"]:
+            bot.reply_to(message, "пизда")
+        elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
+            bot.reply_to(message, "пидора ответ")
+        elif "наверно" in text_clean.lower().split() :
+            bot.send_sticker(chat_id, file_id)
         
 bot.polling()
