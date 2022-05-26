@@ -19,7 +19,7 @@ def echo_all(message):
         bot.reply_to(message, "пизда")
     elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
         bot.reply_to(message, "пидора ответ")
-    elif text_clean.lower().split() in ["наверно"]:
+    elif "наверно" in text_clean.lower().split() :
         bot.reply_to(message, "наверное!")
         bot.reply_to(message, bot.send_sticker(chat_id, file_id))
         
