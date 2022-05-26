@@ -41,6 +41,9 @@ def reply_one_word(message):
     
     elif "мне" in ' '.join(text_clean.lower().split()[-1]):
             bot.reply_to(message, "... у тебя рука в говне")
+        
+    elif "питоне" in text_clean.lower():
+        bot.reply_to(message, "петухоне")
 
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:
