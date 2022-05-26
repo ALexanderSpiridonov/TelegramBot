@@ -3,7 +3,7 @@ import telebot
 from config import BOT_TOKEN
 bot = telebot.TeleBot(BOT_TOKEN)
 chat_id = -1001739829177
-file_id = "AQAD2hAAAuZ4kEpy"
+file_id = "AAMCAgADGQEAA2pij21avRlYIAABpbPQ93CmTO54UEQAAtoQAALmeJBKA-9sh6hDcKEBAAdtAAMkBA"
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
@@ -21,6 +21,6 @@ def echo_all(message):
         bot.reply_to(message, "пидора ответ")
     elif "наверно" in text_clean.lower().split() :
         bot.reply_to(message, "наверное!")
-        bot.reply_to(message, bot.send_sticker(chat_id, file_id))
+        bot.send_sticker(chat_id, file_id)
         
 bot.polling()
