@@ -15,10 +15,10 @@ def send_welcome(message):
     bot.reply_to(message, "Скажи триста")
 
 # one word check
-@bot.message_handler(func=lambda m: len(m.text.split()) > 0, regexp="[^А-Яа-яa0-9]+")
+@bot.message_handler(func=lambda m: len(m.text.split()) > 0) #, regexp="[^А-Яа-яa0-9]+")
 def echo_all(message):
-    text_clean = message.text # + " "
-    # text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
+    text = message.text # + " "
+    text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
 
     if len(text_clean.split()) > 0:
         # bot replies
