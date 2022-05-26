@@ -2,6 +2,8 @@ import re
 import telebot
 from config import BOT_TOKEN
 bot = telebot.TeleBot(BOT_TOKEN)
+chat_id = -1001739829177
+file_id = "CAACAgIAAx0CZ7OvuQACPwZijymC3nryjFXMJrqzndxg4bxC0gAC2hAAAuZ4kEoD72yHqENwoSQE"
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
@@ -17,5 +19,7 @@ def echo_all(message):
         bot.reply_to(message, "пизда")
     elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
         bot.reply_to(message, "пидора ответ")
+    elif text_clean.lower().split() in ["наверно"]:
+        bot.reply_to(message, bot.send_sticker(chat_id, file_id))
         
 bot.polling()
