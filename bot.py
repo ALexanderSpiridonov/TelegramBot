@@ -3,7 +3,7 @@ import telebot
 from config import BOT_TOKEN
 bot = telebot.TeleBot(BOT_TOKEN)
 chat_id = -1001739829177
-file_id = "CAACAgIAAx0CZ7OvuQACPwZijymC3nryjFXMJrqzndxg4bxC0gAC2hAAAuZ4kEoD72yHqENwoSQE"
+file_id = "AQAD2hAAAuZ4kEpy"
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
