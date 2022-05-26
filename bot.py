@@ -53,6 +53,9 @@ def reply_one_word(message):
 
     elif "шульман" in ' '.join(text_clean.lower()):
         bot.reply_to(message, "Правильно говорить Хуюльман!")
+
+    elif "ага" in ' '.join(text_clean.lower().split()[-1]):
+        bot.reply_to(message, "хуйна")
     
 
     # check if there are more than one word in message 
