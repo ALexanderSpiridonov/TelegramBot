@@ -5,7 +5,7 @@ import re
 import telebot
 # from config import BOT_TOKEN
 BOT_TOKEN = os.environ['BOT_TOKEN']
-chat_id = os.environ['chat_id']
+chat_id = os.environ['CHAT_ID']
 bot = telebot.TeleBot(BOT_TOKEN)
 
 file_id = "CAACAgIAAx0CZ7OvuQACP45ij2-WhDPJX8fDzzizrxzz7iXV4AAC2hAAAuZ4kEoD72yHqENwoSQE"
