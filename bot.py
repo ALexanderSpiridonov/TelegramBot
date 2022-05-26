@@ -14,10 +14,12 @@ file_id = "CAACAgIAAx0CZ7OvuQACP45ij2-WhDPJX8fDzzizrxzz7iXV4AAC2hAAAuZ4kEoD72yHq
 def send_welcome(message):
     bot.reply_to(message, "Скажи триста")
 
-@bot.message_handler(func=lambda m: True)
+# one word check
+@bot.message_handler(func=lambda m: True, regexp="[^А-Яа-яa0-9]+")
 def echo_all(message):
-    text = message.text + " "
-    text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
+    text_clean = message.text + " "
+    # text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
+
     if len(text_clean.split()) > 0:
         # bot replies
         if any(val in text_clean.lower().split() for val in ["триста", "300"]):
@@ -32,7 +34,7 @@ def echo_all(message):
         elif "наверно" in text_clean.lower().split() :
             bot.send_sticker(chat_id, file_id)
 
-        elif "получилось" in text_clean.lower().split()[-1]:g
+        elif "получилось" in text_clean.lower().split()[-1]:
             bot.reply_to(message, "рубаха в жопу засучилась")
 
         elif "получается" in text_clean.lower().split()[-1]:
