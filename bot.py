@@ -39,16 +39,11 @@ def reply_one_word(message):
     elif "получается" in text_clean.lower().split()[-1]:
         bot.reply_to(message, "... и хуй стоит, и голова качается!")
 
-# more than two words messages
-@bot.message_handler(func=lambda m: len(m.text.split()) > 1)
-def reply_two_words(message):
-    text = message.text + " "
-    text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
-
-    if "дай мне" in ' '.join(text_clean.lower().split()[-2:]):
-        bot.reply_to(message, "... у тебя рука в говне")
-    
-    elif "будь другом" in ' '.join(text_clean.lower().split()[-2:]):
-        bot.reply_to(message, "насри кругом!")
+    if len(text_clean.split()) > 1:
+        if "дай мне" in ' '.join(text_clean.lower().split()[-2:]):
+            bot.reply_to(message, "... у тебя рука в говне")
+        
+        elif "будь другом" in ' '.join(text_clean.lower().split()[-2:]):
+            bot.reply_to(message, "насри кругом!")
     
 bot.polling()
