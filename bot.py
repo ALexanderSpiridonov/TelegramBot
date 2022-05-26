@@ -32,13 +32,14 @@ def echo_all(message):
         elif "наверно" in text_clean.lower().split() :
             bot.send_sticker(chat_id, file_id)
 
-        elif "получилось" in text_clean.lower().split()[-1]:
+        elif "получилось" in text_clean.lower().split()[-1]:g
             bot.reply_to(message, "рубаха в жопу засучилась")
 
         elif "получается" in text_clean.lower().split()[-1]:
             bot.reply_to(message, "... и хуй стоит, и голова качается!")
 
-        elif "дай мне" in ' '.join(text_clean.lower().split[-2:]):
+    if len(text_clean.split()) > 1:
+        if "дай мне" in ' '.join(text_clean.lower().split[-2:]):
             bot.reply_to(message, "... у тебя рука в говне")
         
         elif "будь другом" in ' '.join(text_clean.lower().split[-2:]):
