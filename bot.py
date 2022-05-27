@@ -66,6 +66,9 @@ def reply_one_word(message):
     elif "получилось" in text_clean.lower().split()[-1]:
         bot.reply_to(message, "рубаха в жопу засучилась")
 
+    elif "сука" in text_clean.lower().split()[-1]:
+        bot.reply_to(message, "хуюка")
+
     elif "получается" in text_clean.lower().split()[-1]:
         bot.reply_to(message, "... и хуй стоит, и голова качается!")
     
