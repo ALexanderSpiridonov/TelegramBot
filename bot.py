@@ -38,15 +38,6 @@ file_id = "CAACAgIAAx0CZ7OvuQACP45ij2-WhDPJX8fDzzizrxzz7iXV4AAC2hAAAuZ4kEoD72yHq
 def send_welcome(message):
     bot.reply_to(message, "Скажи триста")
 
-# set up timer for messages
-@bot.message_handler(func=lambda m: True)
-def send_refresh(message):
-    # print('reset timer and start again')
-    t.cancel()
-    newTimer()
-    t.start()
-    # print("\n timer started")
-    
 
 # one word check
 @bot.message_handler(func=lambda m: len(m.text.split()) > 0) #, regexp="[^А-Яа-яa0-9]+")
@@ -98,6 +89,16 @@ def reply_one_word(message):
         
         elif "будь другом" in ' '.join(text_clean.lower().split()[-2:]):
             bot.reply_to(message, "насри кругом!")
+
+
+# set up timer for messages
+@bot.message_handler(func=lambda m: True)
+def send_refresh(message):
+    # print('reset timer and start again')
+    t.cancel()
+    newTimer()
+    t.start()
+    # print("\n timer started")
 
 if __name__ == '__main__':
     bot.polling()
