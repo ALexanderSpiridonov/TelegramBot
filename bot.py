@@ -42,6 +42,11 @@ def send_welcome(message):
 # one word check
 @bot.message_handler(func=lambda m: len(m.text.split()) > 0) #, regexp="[^А-Яа-яa0-9]+")
 def reply_one_word(message):
+    # print('reset timer and start again')
+    t.cancel()
+    newTimer()
+    t.start()
+    # print("\n timer started")
     text = message.text + " "
     text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
     
@@ -91,14 +96,14 @@ def reply_one_word(message):
             bot.reply_to(message, "насри кругом!")
 
 
-# set up timer for messages
-@bot.message_handler(func=lambda m: True)
-def send_refresh(message):
-    # print('reset timer and start again')
-    t.cancel()
-    newTimer()
-    t.start()
-    # print("\n timer started")
+# # set up timer for messages
+# @bot.message_handler(func=lambda m: True)
+# def send_refresh(message):
+#     # print('reset timer and start again')
+#     t.cancel()
+#     newTimer()
+#     t.start()
+#     # print("\n timer started")
 
 if __name__ == '__main__':
     bot.polling()
