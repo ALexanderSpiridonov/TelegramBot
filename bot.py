@@ -48,13 +48,13 @@ def reply_one_word(message):
     elif "пидор" in ' '.join(text_clean.lower().split()[-1]):
         bot.reply_to(message, "сам ты пидор")
 
-    elif "юдин" in ' '.join(text_clean.lower()):
+    elif "юдин" in text_clean.lower().split():
         bot.reply_to(message, "Хуюдин")
 
-    elif "шульман" in ' '.join(text_clean.lower()):
+    elif "шульман" in text_clean.lower().split():
         bot.reply_to(message, "Правильно говорить Хуюльман!")
 
-    elif "ага" in ' '.join(text_clean.lower().split()[-1]):
+    elif text_clean.lower().split()[-1] in ["ага"]:
         bot.reply_to(message, "хуйна")
     
 
