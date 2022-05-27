@@ -15,7 +15,7 @@ def send_random_sticker():
 
 def newTimer():
     global t
-    t = Timer(10.0, send_random_sticker)
+    t = Timer(3600.0, send_random_sticker)
 newTimer()
 
 
