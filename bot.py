@@ -65,7 +65,8 @@ def reply_one_word(message):
         bot.reply_to(message, "пидора ответ")
 
     elif "наверно" in text_clean.lower().split() :
-        bot.reply_to(message, bot.send_sticker(chat_id, file_id))
+        bot.send_sticker(chat_id, file_id)
+        # bot.reply_to(message, bot.send_sticker(chat_id, file_id))
 
     elif "получилось" in text_clean.lower().split()[-1]:
         bot.reply_to(message, "рубаха в жопу засучилась")
