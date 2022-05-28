@@ -68,13 +68,13 @@ def reply_one_word(message):
         bot.send_sticker(chat_id, file_id)
         # bot.reply_to(message, bot.send_sticker(chat_id, file_id))
 
-    elif "получилось" in text_clean.lower().split()[-1]:
+    elif text_clean.lower().split()[-1] in ["получилось", "получилась"]:
         bot.reply_to(message, "рубаха в жопу засучилась")
 
     elif "сука" in text_clean.lower().split()[-1]:
         bot.reply_to(message, "хуюка")
 
-    elif "получается" in text_clean.lower().split()[-1]:
+    elif text_clean.lower().split()[-1] in ["получается", "кончается", "начинается"]:
         bot.reply_to(message, "... и хуй стоит, и голова качается!")
     
     elif "мне" in ' '.join(text_clean.lower().split()[-1]):
