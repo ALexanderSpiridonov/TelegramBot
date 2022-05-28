@@ -39,6 +39,7 @@ def send_welcome(message):
     bot.reply_to(message, "Скажи триста")
 
 
+## TODO: refactor with pattern matching with python 3.10
 # one word check
 @bot.message_handler(func=lambda m: len(m.text.split()) > 0) #, regexp="[^А-Яа-яa0-9]+")
 def reply_one_word(message):
@@ -51,7 +52,10 @@ def reply_one_word(message):
     text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
     
     # bot replies
-    if any(val in text_clean.lower().split() for val in ["триста", "300"]):
+    # if any(val in text_clean.lower().split() for val in ["триста", "300"]):
+    #     bot.reply_to(message, "отсоси у тракториста")
+    
+    if text_clean.lower().split()[-1] in ["триста", "300"]:
         bot.reply_to(message, "отсоси у тракториста")
 
     elif text_clean.lower().split()[-1] in ["да", "дa"]:
