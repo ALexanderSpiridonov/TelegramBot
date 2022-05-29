@@ -78,7 +78,10 @@ def reply_one_word(message):
     elif "сука" in text_clean.lower().split()[-1]:
         bot.reply_to(message, "хуюка")
 
-    elif text_clean.lower().split()[-1] in ["получается", "кончается", "начинается"]:
+    elif text_clean.lower().split()[-1] in ["получается", 
+                                            "кончается", 
+                                            "начинается"
+                                            ]:
         bot.reply_to(message, "... и хуй стоит, и голова качается!")
     
     elif "мне" in ' '.join(text_clean.lower().split()[-1]):
@@ -87,8 +90,8 @@ def reply_one_word(message):
     elif "питоне" in text_clean.lower():
         bot.reply_to(message, "петухоне...")
 
-    elif "пидор" in ' '.join(text_clean.lower().split()[-1]):
-        bot.reply_to(message, "сам ты пидор")
+    elif text_clean.lower().split()[-1] in ["пидор", "педик", "петух", "гей"]:
+        bot.reply_to(message, "сам педик!")
 
     elif "юдин" in text_clean.lower().split():
         bot.reply_to(message, "Хуюдин")
@@ -96,7 +99,8 @@ def reply_one_word(message):
     elif "шульман" in text_clean.lower().split():
         bot.reply_to(message, "Правильно говорить Хуюльман!")
 
-    elif text_clean.lower().split()[-1] in ["ага"]:
+    elif text_clean.lower().split()[-1] in ["ага", 
+                                            "война"]:
         bot.reply_to(message, "хуйна")
     
     # check if there are more than one word in message 
