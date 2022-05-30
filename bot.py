@@ -105,6 +105,12 @@ def reply_one_word(message):
     elif "юдин" in text_clean.lower().split():
         bot.reply_to(message, "Хуюдин")
 
+    elif "светов" in text_clean.lower().split():
+        bot.reply_to(message, "Хуетов")
+
+    elif "кац" in text_clean.lower().split():
+        bot.reply_to(message, "Хуяц")
+
     elif "шульман" in text_clean.lower().split():
         bot.reply_to(message, "Правильно говорить Хуюльман!")
 
@@ -122,6 +128,8 @@ def reply_one_word(message):
 
         elif "у вас" == ' '.join(text_clean.lower().split()[-2:]):
             bot.reply_to(message, "А у нас в Японии три врача в пизду глядели -ничего не поняли")
+
+
 
 
 # # set up timer for messages
