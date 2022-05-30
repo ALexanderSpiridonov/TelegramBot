@@ -77,6 +77,9 @@ def reply_one_word(message):
 
     elif "сука" in text_clean.lower().split()[-1]:
         bot.reply_to(message, "хуюка")
+    
+    elif "где" in text_clean.lower().split()[-1]:
+        bot.reply_to(message, "в пизде")
 
     elif text_clean.lower().split()[-1] in ["получается", 
                                             "кончается", 
