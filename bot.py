@@ -114,11 +114,14 @@ def reply_one_word(message):
     
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:
-        if "дай мне" in ' '.join(text_clean.lower().split()[-2:]):
+        if "дай мне" == ' '.join(text_clean.lower().split()[-2:]):
             bot.reply_to(message, "... у тебя рука в говне")
         
-        elif "будь другом" in ' '.join(text_clean.lower().split()[-2:]):
+        elif "будь другом" == ' '.join(text_clean.lower().split()[-2:]):
             bot.reply_to(message, "насри кругом!")
+
+        elif "у вас" == ' '.join(text_clean.lower().split()[-2:]):
+            bot.reply_to(message, "А у нас в Японии три врача в пизду глядели -ничего не поняли")
 
 
 # # set up timer for messages
