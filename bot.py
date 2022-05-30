@@ -102,7 +102,7 @@ def reply_one_word(message):
     elif "питоне" in text_clean.lower():
         bot.reply_to(message, "петухоне...")
 
-    elif text_clean.lower().split()[-1][-1] == 'o':
+    elif text_clean.lower().split()[-1][-1] == "о":
         bot.reply_to(message, text_clean.lower().split()[-1][:-2] + "ое")
 
     elif text_clean.lower().split()[-1] in ["пидор", "педик", "петух", "гей"]:
