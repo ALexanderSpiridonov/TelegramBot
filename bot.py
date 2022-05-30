@@ -102,6 +102,9 @@ def reply_one_word(message):
     elif "питоне" in text_clean.lower():
         bot.reply_to(message, "петухоне...")
 
+    elif "спасибо" in text_clean.lower():
+        bot.reply_to(message, "спасибое")
+
     elif text_clean.lower().split()[-1] in ["пидор", "педик", "петух", "гей"]:
         bot.reply_to(message, "сам педик!")
 
