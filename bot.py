@@ -95,6 +95,9 @@ def reply_one_word(message):
                                             "испугается"
                                             ]:
         bot.reply_to(message, "... и хуй стоит, и голова качается!")
+
+    elif text_clean.lower().split()[-1] in ["ну"]:
+        bot.reply_to(message, "хуй гну ...")
     
     elif "мне" in ' '.join(text_clean.lower().split()[-1]):
             bot.reply_to(message, "... у тебя рука в говне")
@@ -122,22 +125,25 @@ def reply_one_word(message):
     elif "шульман" in text_clean.lower().split():
         bot.reply_to(message, "Правильно говорить Хуюльман!")
 
-    elif text_clean.lower().split()[-1] in ["ага", 
-                                            "война"]:
+    elif text_clean.lower().split()[-1] in ["ага"]:
+        bot.reply_to(message, "хуерга")
+
+    elif text_clean.lower().split()[-1] in ["война"]:
         bot.reply_to(message, "хуйна")
+
+    elif text_clean.lower().split()[-1] in ["мне"]:
+        bot.reply_to(message, "... у тебя рука в говне")
     
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:
-        if "дай мне" == ' '.join(text_clean.lower().split()[-2:]):
-            bot.reply_to(message, "... у тебя рука в говне")
+        # if "дай мне" == ' '.join(text_clean.lower().split()[-2:]):
+        #     bot.reply_to(message, "... у тебя рука в говне")
         
-        elif "будь другом" == ' '.join(text_clean.lower().split()[-2:]):
+        if "будь другом" == ' '.join(text_clean.lower().split()[-2:]):
             bot.reply_to(message, "насри кругом!")
 
         elif "у вас" == ' '.join(text_clean.lower().split()[-2:]):
-            bot.reply_to(message, "А у нас в Японии три врача в пизду глядели -ничего не поняли")
-
-
+            bot.reply_to(message, "А у нас в Японии три врача в пизду глядели - ничего не поняли")
 
 
 # # set up timer for messages
