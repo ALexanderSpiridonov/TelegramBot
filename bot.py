@@ -38,6 +38,9 @@ file_id = "CAACAgIAAx0CZ7OvuQACP45ij2-WhDPJX8fDzzizrxzz7iXV4AAC2hAAAuZ4kEoD72yHq
 def send_welcome(message):
     bot.reply_to(message, "Скажи триста")
 
+@bot.message_handler(commands=['sticker'])
+def send_sticker(message):
+    send_random_sticker()
 
 ## TODO: refactor with pattern matching with python 3.10
 # one word check
