@@ -136,6 +136,9 @@ def reply_one_word(message):
 
     elif text_clean.lower().split()[-1] in ["мне"]:
         bot.reply_to(message, "... у тебя рука в говне")
+
+    elif text_clean.lower().split()[-1] in ["ладно"]:
+        bot.reply_to(message, "у тебя в трусах прохладно ...")
     
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:
