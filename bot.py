@@ -13,7 +13,7 @@ def send_random_sticker():
     random_sticker_id = stickers_id[rand_int]
     bot.send_sticker(chat_id, random_sticker_id)
 
-def send_today_reply():
+def send_today_reply(chat_id):
     rand_int = random.randint(0, len(today_reply))
     random_reply = today_reply[rand_int]
     bot.send_message(chat_id, random_reply)
@@ -151,7 +151,7 @@ def reply_one_word(message):
             bot.reply_to(message, "у тебя в трусах прохладно ...")
 
         if "сегодня" in text_clean.lower().split():
-            bot.reply_to(message, send_today_reply())
+            bot.reply_to(message, send_today_reply(chat_id = message.chat.id))
         
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:
