@@ -5,7 +5,7 @@ import re
 import random
 import telebot
 from threading import Timer
-from config import stickers_id
+from config import stickers_id, today_reply
 
 
 def send_random_sticker():
@@ -13,9 +13,18 @@ def send_random_sticker():
     random_sticker_id = stickers_id[rand_int]
     bot.send_sticker(chat_id, random_sticker_id)
 
+def send_today_reply():
+    rand_int = random.randint(0, len(today_reply))
+    random_reply = today_reply[rand_int]
+    bot.send_message(chat_id, random_reply)
+
+def timer_action():
+    send_today_reply()
+    send_random_sticker()
+
 def newTimer():
     global t
-    t = Timer(3600.0, send_random_sticker)
+    t = Timer(3600.0, timer_action)
 newTimer()
 
 
@@ -139,6 +148,9 @@ def reply_one_word(message):
 
     elif text_clean.lower().split()[-1] in ["ладно"]:
         bot.reply_to(message, "у тебя в трусах прохладно ...")
+
+    if "сегодня" in text_clean.lower().split():
+        bot.reply_to(message, send_today_reply())
     
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:

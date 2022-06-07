@@ -62,4 +62,23 @@ stickers_id = [
                 'CAACAgIAAxUAAWKRMZZY9VMXCr4VaicveBGDNG51AAI0GAACVr0ZShX-Fojo87KgJAQ',
                 'CAACAgIAAxUAAWKRMZZ0FEnGJ80EobCdH94hyfMRAAKAFgAC4T6wSkIDrvBmTYv2JAQ',
                 'CAACAgIAAxUAAWKRMZbVlRCNVZ0yOBuTNwxKOYzGAALtHwAC_7QAAUvgztrvjN0iECQE',
-                'CAACAgIAAxUAAWKRMZa35Q3f2PUXdBEPBcrSzaISAAIrGAACySYBS9cIwgUWqPPaJAQ']
+                'CAACAgIAAxUAAWKRMZa35Q3f2PUXdBEPBcrSzaISAAIrGAACySYBS9cIwgUWqPPaJAQ'
+                ]
+
+# https://redburda.ru/segodnya-stavish-vpn-a-zavtra-nato-sdashsya-v-plen/
+today_reply = [
+    "СЕГОДНЯ СТАВИШЬ VPN, А ЗАВТРА НАТО СДАШЬСЯ В ПЛЕН!",
+    "Сегодня борешься за мир, А завтра – сзади конвоир.",
+    "Сегодня стал ты пацифистом, А завтра – падлой и нацистом!",
+    "Сегодня гнусная мразота, А завтра – мразь и либеро́та!",
+    "Сегодня крикнул: «Нет войне!», А завтра  – изменил жене!",
+    "Сегодня постишь вражьи фейки, А завтра – сдохнешь без копейки!",
+    "Сегодня ты экономист, А завтра гад и экстремист!",
+    "Сегодня твой кумир Навальный, А завтра – с шваброю ректальной!",
+    "Сегодня хочешь ты в Париж, А завтра хрен тебе и шиш!",
+    "Сегодня доллар шестьдесят, А завтра двести шестьдесят!",
+    "Сегодня ты на БМВ, А завтра – «Лада» с Z и V!",
+    "Сегодня ты читаешь Пруста, А завтра – лапти, щи, капуста!",
+    "Сегодня ты читаешь книжки, А завтра будешь умный слишком!",
+    "Сегодня пляшешь на эстраде, А завтра просишь Христа ради!",
+]
