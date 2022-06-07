@@ -67,6 +67,9 @@ def reply_one_word(message):
     # if any(val in text_clean.lower().split() for val in ["триста", "300"]):
     #     bot.reply_to(message, "отсоси у тракториста")
     
+    if "сегодня" in text_clean.lower().split():
+        bot.reply_to(message, send_today_reply())
+
     if text_clean.lower().split()[-1] in ["триста", "300"]:
         bot.reply_to(message, "отсоси у тракториста")
 
@@ -121,7 +124,6 @@ def reply_one_word(message):
     #     bot.reply_to(message, text_clean.lower().split()[-1] + "е")
     #     send_random_sticker()
 
-
     elif text_clean.lower().split()[-1] in ["пидор", "педик", "петух", "гей"]:
         bot.reply_to(message, f"сам {text_clean.lower().split()[-1]}!")
 
@@ -148,9 +150,6 @@ def reply_one_word(message):
 
     elif text_clean.lower().split()[-1] in ["ладно"]:
         bot.reply_to(message, "у тебя в трусах прохладно ...")
-
-    if "сегодня" in text_clean.lower().split():
-        bot.reply_to(message, send_today_reply())
     
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:
