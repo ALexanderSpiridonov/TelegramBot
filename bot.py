@@ -151,7 +151,7 @@ def reply_one_word(message):
             bot.reply_to(message, "у тебя в трусах прохладно ...")
 
         if "сегодня" in text_clean.lower().split():
-            bot.reply_to(message, send_today_reply(chat_id = message.chat.id))
+            send_today_reply(chat_id = message.chat.id)
         
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:
