@@ -63,94 +63,96 @@ def reply_one_word(message):
     text = message.text + " "
     text_clean = re.sub('[^А-Яа-яa0-9]+', ' ', text)
     
-    # bot replies
-    # if any(val in text_clean.lower().split() for val in ["триста", "300"]):
-    #     bot.reply_to(message, "отсоси у тракториста")
-
-    if text_clean.lower().split()[-1] in ["триста", "300"]:
-        bot.reply_to(message, "отсоси у тракториста")
-
-    elif text_clean.lower().split()[-1] in ["да", "дa"]:
-        bot.reply_to(message, "пизда")
-
-    elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
-        bot.reply_to(message, "пидора ответ")
-
-    elif "наверно" in text_clean.lower().split() :
-        bot.send_sticker(chat_id, file_id)
-        # bot.reply_to(message, bot.send_sticker(chat_id, file_id))
-
-    elif text_clean.lower().split()[-1] in ["получилось", 
-                                            "получилась", 
-                                            "случилось",
-                                            "приключилось"
-                                            ]:
-        bot.reply_to(message, "рубаха в жопу засучилась")
-
-    elif "сука" in text_clean.lower().split()[-1]:
-        bot.reply_to(message, "хуюка")
-    
-    elif "где" in text_clean.lower().split()[-1]:
-        bot.reply_to(message, "в пизде")
-
-    elif text_clean.lower().split()[-1] in ["получается", 
-                                            "кончается", 
-                                            "начинается",
-                                            "встречается",
-                                            "продолжается",
-                                            "повышается",
-                                            "рассыпается",
-                                            "закрывается",
-                                            "сражается",
-                                            "ошибается",
-                                            "считается",
-                                            "испугается"
-                                            ]:
-        bot.reply_to(message, "... и хуй стоит, и голова качается!")
-
-    elif text_clean.lower().split()[-1] in ["ну"]:
-        bot.reply_to(message, "хуй гну ...")
-    
-    elif "мне" in ' '.join(text_clean.lower().split()[-1]):
-            bot.reply_to(message, "... у тебя рука в говне")
+    ####  bot replies
+    if len(text_clean.split()) > 0:
         
-    elif "питоне" in text_clean.lower():
-        bot.reply_to(message, "петухоне...")
+        # if any(val in text_clean.lower().split() for val in ["триста", "300"]):
+        #     bot.reply_to(message, "отсоси у тракториста")
 
-    # elif text_clean.lower().split()[-1][-1] == "о":
-    #     bot.reply_to(message, text_clean.lower().split()[-1] + "е")
-    #     send_random_sticker()
+        if text_clean.lower().split()[-1] in ["триста", "300"]:
+            bot.reply_to(message, "отсоси у тракториста")
 
-    elif text_clean.lower().split()[-1] in ["пидор", "педик", "петух", "гей"]:
-        bot.reply_to(message, f"сам {text_clean.lower().split()[-1]}!")
+        elif text_clean.lower().split()[-1] in ["да", "дa"]:
+            bot.reply_to(message, "пизда")
 
-    elif "юдин" in text_clean.lower().split():
-        bot.reply_to(message, "Хуюдин")
+        elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
+            bot.reply_to(message, "пидора ответ")
 
-    elif "светов" in text_clean.lower().split():
-        bot.reply_to(message, "Хуетов")
+        elif "наверно" in text_clean.lower().split() :
+            bot.send_sticker(chat_id, file_id)
+            # bot.reply_to(message, bot.send_sticker(chat_id, file_id))
 
-    elif "кац" in text_clean.lower().split():
-        bot.reply_to(message, "Хуяц")
+        elif text_clean.lower().split()[-1] in ["получилось", 
+                                                "получилась", 
+                                                "случилось",
+                                                "приключилось"
+                                                ]:
+            bot.reply_to(message, "рубаха в жопу засучилась")
 
-    elif "шульман" in text_clean.lower().split():
-        bot.reply_to(message, "Правильно говорить Хуюльман!")
+        elif "сука" in text_clean.lower().split()[-1]:
+            bot.reply_to(message, "хуюка")
+        
+        elif "где" in text_clean.lower().split()[-1]:
+            bot.reply_to(message, "в пизде")
 
-    elif text_clean.lower().split()[-1] in ["ага"]:
-        bot.reply_to(message, "хуерга")
+        elif text_clean.lower().split()[-1] in ["получается", 
+                                                "кончается", 
+                                                "начинается",
+                                                "встречается",
+                                                "продолжается",
+                                                "повышается",
+                                                "рассыпается",
+                                                "закрывается",
+                                                "сражается",
+                                                "ошибается",
+                                                "считается",
+                                                "испугается"
+                                                ]:
+            bot.reply_to(message, "... и хуй стоит, и голова качается!")
 
-    elif text_clean.lower().split()[-1] in ["война"]:
-        bot.reply_to(message, "хуйна")
+        elif text_clean.lower().split()[-1] in ["ну"]:
+            bot.reply_to(message, "хуй гну ...")
+        
+        elif "мне" in ' '.join(text_clean.lower().split()[-1]):
+                bot.reply_to(message, "... у тебя рука в говне")
+            
+        elif "питоне" in text_clean.lower():
+            bot.reply_to(message, "петухоне...")
 
-    elif text_clean.lower().split()[-1] in ["мне"]:
-        bot.reply_to(message, "... у тебя рука в говне")
+        # elif text_clean.lower().split()[-1][-1] == "о":
+        #     bot.reply_to(message, text_clean.lower().split()[-1] + "е")
+        #     send_random_sticker()
 
-    elif text_clean.lower().split()[-1] in ["ладно"]:
-        bot.reply_to(message, "у тебя в трусах прохладно ...")
+        elif text_clean.lower().split()[-1] in ["пидор", "педик", "петух", "гей"]:
+            bot.reply_to(message, f"сам {text_clean.lower().split()[-1]}!")
 
-    if "сегодня" in text_clean.lower().split():
-        bot.reply_to(message, send_today_reply())
-    
+        elif "юдин" in text_clean.lower().split():
+            bot.reply_to(message, "Хуюдин")
+
+        elif "светов" in text_clean.lower().split():
+            bot.reply_to(message, "Хуетов")
+
+        elif "кац" in text_clean.lower().split():
+            bot.reply_to(message, "Хуяц")
+
+        elif "шульман" in text_clean.lower().split():
+            bot.reply_to(message, "Правильно говорить Хуюльман!")
+
+        elif text_clean.lower().split()[-1] in ["ага"]:
+            bot.reply_to(message, "хуерга")
+
+        elif text_clean.lower().split()[-1] in ["война"]:
+            bot.reply_to(message, "хуйна")
+
+        elif text_clean.lower().split()[-1] in ["мне"]:
+            bot.reply_to(message, "... у тебя рука в говне")
+
+        elif text_clean.lower().split()[-1] in ["ладно"]:
+            bot.reply_to(message, "у тебя в трусах прохладно ...")
+
+        if "сегодня" in text_clean.lower().split():
+            bot.reply_to(message, send_today_reply())
+        
     # check if there are more than one word in message 
     if len(text_clean.split()) > 1:
         # if "дай мне" == ' '.join(text_clean.lower().split()[-2:]):
