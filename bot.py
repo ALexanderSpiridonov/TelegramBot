@@ -53,7 +53,7 @@ def send_sticker(message):
 
 ## TODO: refactor with pattern matching with python 3.10
 # one word check
-@bot.message_handler(func=lambda m: True) #len(m.text.split()) > 0) #, regexp="[^А-Яа-яa0-9]+")
+@bot.message_handler(func=lambda m: len(m.text.split()) > 0) #, regexp="[^А-Яа-яa0-9]+")
 def reply_one_word(message): 
     # print('reset timer and start again')
     t.cancel()
