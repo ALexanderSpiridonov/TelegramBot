@@ -114,7 +114,7 @@ def reply_one_word(message):
             bot.reply_to(message, "хуй гну ...")
         
         elif "мне" in ' '.join(text_clean.lower().split()[-1]):
-                bot.reply_to(message, "... у тебя рука в говне")
+            bot.reply_to(message, "... у тебя рука в говне")
             
         elif "питоне" in text_clean.lower():
             bot.reply_to(message, "петухоне...")
