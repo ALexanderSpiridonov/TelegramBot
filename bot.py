@@ -69,7 +69,7 @@ def reply_one_word(message):
         # if any(val in text_clean.lower().split() for val in ["триста", "300"]):
         #     bot.reply_to(message, "отсоси у тракториста")
 
-        if text_clean.lower().split()[-1] in ["триста", "300"]:
+        if text_clean.lower().split()[-1] in ["триста", "300", "зоо"]:
             bot.reply_to(message, "отсоси у тракториста")
 
         elif text_clean.lower().split()[-1] in ["да", "дa"]:
