@@ -19,7 +19,7 @@ def send_today_reply(chat_id):
     bot.send_message(chat_id, random_reply)
 
 def timer_action():
-    send_today_reply()
+    send_today_reply(chat_id=chat_id)
     send_random_sticker()
 
 def newTimer():
