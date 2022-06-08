@@ -9,13 +9,13 @@ from config import stickers_id, today_reply
 
 
 def send_random_sticker():
-    rand_int = random.randint(0, len(stickers_id))
+    rand_int = random.randint(0, len(stickers_id)-1)
     random_sticker_id = stickers_id[rand_int]
     bot.send_sticker(chat_id, random_sticker_id)
 
 def send_today_reply(chat_id):
-    print(len(today_reply))
-    rand_int = random.randint(0, len(today_reply))
+    # print(len(today_reply))
+    rand_int = random.randint(0, len(today_reply)-1)
     random_reply = today_reply[rand_int]
     bot.send_message(chat_id, random_reply)
 
