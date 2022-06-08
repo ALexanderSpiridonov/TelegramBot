@@ -14,6 +14,7 @@ def send_random_sticker():
     bot.send_sticker(chat_id, random_sticker_id)
 
 def send_today_reply(chat_id):
+    print(len(today_reply))
     rand_int = random.randint(0, len(today_reply))
     random_reply = today_reply[rand_int]
     bot.send_message(chat_id, random_reply)
