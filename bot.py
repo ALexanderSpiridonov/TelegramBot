@@ -85,7 +85,7 @@ def reply_one_word(message):
         # elif text_clean.lower().split()[-1] in ["да", "дa"]:
         #     bot.reply_to(message, "пизда")
 
-        elif "путин" шт text_clean.lower().split():
+        elif "путин" in text_clean.lower().split():
             send_putin_reply()
 
         elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
