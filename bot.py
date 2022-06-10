@@ -5,7 +5,7 @@ import re
 import random
 import telebot
 from threading import Timer
-from config import stickers_id, today_reply
+from config import stickers_id, today_reply, putin_reply
 
 
 def send_random_sticker():
@@ -19,13 +19,19 @@ def send_today_reply(chat_id):
     random_reply = today_reply[rand_int]
     bot.send_message(chat_id, random_reply)
 
+def send_putin_reply():
+    rand_int = random.randint(0, len(today_reply)-1)
+    random_reply = putin_reply[rand_int]
+    bot.send_message(chat_id, random_reply)
+
 def timer_action():
-    send_today_reply(chat_id=chat_id)
+    # send_today_reply(chat_id=chat_id)
+    send_putin_reply()
     send_random_sticker()
 
 def newTimer():
     global t
-    t = Timer(3600.0, timer_action)
+    t = Timer(60.0, timer_action)
 newTimer()
 
 
