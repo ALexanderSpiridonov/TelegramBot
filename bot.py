@@ -100,7 +100,7 @@ def reply_one_word(message):
                                                 "случилось",
                                                 "приключилось"
                                                 ]:
-            bot.reply_to(message, "рубаха в жопу засучилась")
+            bot.reply_to(message, "... рубаха в жопу засучилась")
 
         elif "сука" in text_clean.lower().split()[-1]:
             bot.reply_to(message, "хуюка")
