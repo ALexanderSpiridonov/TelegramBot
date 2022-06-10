@@ -31,7 +31,7 @@ def timer_action():
 
 def newTimer():
     global t
-    t = Timer(60.0, timer_action)
+    t = Timer(3600.0, timer_action)
 newTimer()
 
 
