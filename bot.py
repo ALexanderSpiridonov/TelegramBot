@@ -1,4 +1,4 @@
-"""Simple Telegram Bot example"""
+"""Royzman replyes Telegram Bot example"""
 
 import os
 import re
@@ -39,15 +39,11 @@ newTimer()
 BOT_TOKEN = os.environ['BOT_TOKEN']
 chat_id = os.environ['CHAT_ID']
 
-###### test bot
-# BOT_TOKEN = "574632910:AAFWAN7buAcQe7MNsmu2VnQGCtFYJJh0Ewc"
-# chat_id = 76016759
-
 # initiat bot
 bot = telebot.TeleBot(BOT_TOKEN)
 
-# sticker for "наверное"
-file_id = "CAACAgIAAx0CZ7OvuQACP45ij2-WhDPJX8fDzzizrxzz7iXV4AAC2hAAAuZ4kEoD72yHqENwoSQE"
+# # sticker for "наверное"
+# file_id = "CAACAgIAAx0CZ7OvuQACP45ij2-WhDPJX8fDzzizrxzz7iXV4AAC2hAAAuZ4kEoD72yHqENwoSQE"
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -91,9 +87,9 @@ def reply_one_word(message):
         elif text_clean.lower().split()[-1] in ["нет", "нeт", "net"]:
             bot.reply_to(message, "пидора ответ")
 
-        elif "наверно" in text_clean.lower().split() :
-            bot.send_sticker(chat_id, file_id)
-            # bot.reply_to(message, bot.send_sticker(chat_id, file_id))
+        # elif "наверно" in text_clean.lower().split() :
+        #     bot.send_sticker(chat_id, file_id)
+        #     # bot.reply_to(message, bot.send_sticker(chat_id, file_id))
 
         elif text_clean.lower().split()[-1] in ["получилось", 
                                                 "получилась", 
